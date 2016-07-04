@@ -1,0 +1,133 @@
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Open Sans Condensed';
+	font-size: 2.6em;
+	color: #fff;
+}
+
+p {
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 1em;
+	color: #fff;
+	margin: 1em 0.5em 1em 0.5em;
+}
+
+
+h3 {
+	font-family: 'Open Sans Condensed';
+	font-size: 1.6em;
+	color: #fff;
+	margin-top: 2em;
+	margin: 2em 1em 1em 1em;
+}
+
+@media (max-width: 460px) {
+	h3 {
+		font-size: 1.3em;
+	}
+}
+
+
+.days-list {
+	margin: 0 auto;
+	border: 0;
+	width: 710px;
+	font-family: 'Droid Sans', sans-serif;
+}
+
+.days-list thead td {
+	font-size: 0.9em;
+	color: #86878C;
+	text-align: left;
+}
+
+.days-list__date-column {
+	width: 200px;
+}
+
+.days-list__name-column {
+
+}
+
+.days-list td {
+	padding: 0.5em;
+	border-bottom: 1px solid #737479;
+}
+
+.days-list tbody td {
+	font-size: 1.0em;
+	color: #fff;
+	text-align: left;
+}
+
+.days-list tbody tr:hover {
+	background-color: rgba(14, 14, 14, 0.5);
+}
+
+tr.days-list__holliday--past {
+	color: #86878C;
+	text-decoration: line-through;
+}
+
+tr.days-list__holliday--past td {
+	color: #ccc;
+}
+
+tr.days-list__holliday--current {
+	background-color: rgba(48, 48, 48, 0.9)
+} 
+
+@media (max-width: 760px) {
+  	.days-list {
+		width: 90%;
+	}
+}
+
+@media (max-width: 460px) {
+  	.days-list__date-column {
+		width: 50%;
+	}
+}
+
+
+footer {
+	margin: 2em 0em 1em 0em;
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 0.8em;
+	color: #fff;
+}
+
+footer a {
+	color: #fff;
+}
+
+footer a:hover {
+	text-decoration: none;
+}
+
