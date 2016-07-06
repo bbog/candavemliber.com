@@ -11,6 +11,17 @@ var Util = {
 
     getRandomInt: function (min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
+    },
+
+
+    getDoubleDigitsFromValue: function (value) {
+
+        value = value + '';
+        if (value.length === 1) {
+            value = '0' + value;
+        }
+
+        return value.split('');
     }
 };
 
@@ -37,12 +48,22 @@ var DateUtil = {
 
             var holliday = hollidays[index],
                 holliday_date = moment(holliday.date, "DD/MM/YYYY"),
-                difference = holliday_date.diff(date);
+                difference = holliday_date.diff();
+
+
 
             if (difference > 0) {
                 return holliday;
             }
         }
+    },
+
+
+    getTimeBetweenDates: function (first_date, second_date) {
+
+        var diff = moment.preciseDiff(first_date, second_date, true);
+
+        return diff;
     },
 
 
@@ -231,12 +252,33 @@ var View = (function () {
         holliday_name = Util.get('holliday_name'),
         holliday_day  = Util.get('holliday_day');
 
+    var months_first_digit   = Util.get('months_first_digit'),
+        months_second_digit  = Util.get('months_second_digit'),
+        days_first_digit     = Util.get('days_first_digit'),
+        days_second_digit    = Util.get('days_second_digit'),
+        hours_first_digit    = Util.get('hours_first_digit'),
+        hours_second_digit   = Util.get('hours_second_digit'),
+        minutes_first_digit  = Util.get('minutes_first_digit'),
+        minutes_second_digit = Util.get('minutes_second_digit'),
+        seconds_first_digit  = Util.get('seconds_first_digit'),
+        seconds_second_digit = Util.get('seconds_second_digit');
+
     return {
         bg_source: bg_source,
         bg_body: bg_body,
         holliday_date: holliday_date,
         holliday_name: holliday_name,
-        holliday_day: holliday_day
+        holliday_day: holliday_day,
+        months_first_digit: months_first_digit,
+        months_second_digit: months_second_digit,
+        days_first_digit: days_first_digit,
+        days_second_digit: days_second_digit,
+        hours_first_digit: hours_first_digit,
+        hours_second_digit: hours_second_digit,
+        minutes_first_digit: minutes_first_digit,
+        minutes_second_digit: minutes_second_digit,
+        seconds_first_digit: seconds_first_digit,
+        seconds_second_digit: seconds_second_digit
     }
 })();
 
@@ -266,15 +308,56 @@ var ViewUtil = {
         var holliday = DateUtil.getNearestHolliday(),
             day_name = DateUtil.getDayNameFromDate(holliday.date);
 
+        ViewUtil.nearest_holliday = holliday;
+
         holliday_date.innerHTML = holliday.date;
         holliday_name.innerHTML = holliday.name;
         holliday_day.innerHTML  = day_name;
+    },
+
+
+    initCountdown: function () {
+
+        var holliday = ViewUtil.nearest_holliday,
+            holliday_date = moment(holliday.date, "DD/MM/YYYY");
+
+
+        setInterval(function updateCountdown() {
+
+            var current_date  = moment(DateUtil.getCurrentTimestamp(), 'X'),
+                difference = DateUtil.getTimeBetweenDates(holliday_date, current_date);
+
+
+            var months_digits = Util.getDoubleDigitsFromValue(difference.months);
+            View.months_first_digit.innerHTML  = months_digits[0];
+            View.months_second_digit.innerHTML = months_digits[1];
+
+            var days_digits = Util.getDoubleDigitsFromValue(difference.days);
+            View.days_first_digit.innerHTML  = days_digits[0];
+            View.days_second_digit.innerHTML = days_digits[1];
+
+            var hours_digits = Util.getDoubleDigitsFromValue(difference.hours);
+            View.hours_first_digit.innerHTML  = hours_digits[0];
+            View.hours_second_digit.innerHTML = hours_digits[1];
+
+            var minutes_digits = Util.getDoubleDigitsFromValue(difference.minutes);
+            View.minutes_first_digit.innerHTML  = minutes_digits[0];
+            View.minutes_second_digit.innerHTML = minutes_digits[1];
+
+            var seconds_digits = Util.getDoubleDigitsFromValue(difference.seconds);
+            View.seconds_first_digit.innerHTML  = seconds_digits[0];
+            View.seconds_second_digit.innerHTML = seconds_digits[1];
+            
+
+        }, 1000);
+        
     }
 }
 
 
 ViewUtil.setBackground();
 ViewUtil.setNearestHolliday();
+ViewUtil.initCountdown();
 
 
 

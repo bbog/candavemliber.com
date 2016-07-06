@@ -26,7 +26,53 @@
 
         <p>Nu azi, astăzi se lucrează :(</p>
 
-        <p>Următoarea zi liberă este pe data de <span id="holliday_date">15/08/2016</span> (<span id="holliday_name"></span>) și pică într-o zi de <span id="holliday_day"></span></p>
+        <p>Următoarea zi liberă este pe data de <span id="holliday_date">15/08/2016</span> (<span id="holliday_name"></span>) și pică într-o zi de <span id="holliday_day"></span>.</p>
+
+        <div class="countdown">
+
+            <!-- luni -->
+            <div class="countdown__group">
+                <span class="countdown__digit" id="months_first_digit"></span>
+                <span class="countdown__digit" id="months_second_digit"></span>
+                <span class="countdown__label">luni</span>
+            </div>
+
+            <span class="countdown__separator">:</span>
+
+            <!-- zile -->
+            <div class="countdown__group">
+                <span class="countdown__digit" id="days_first_digit"></span>
+                <span class="countdown__digit" id="days_second_digit"></span>
+                <span class="countdown__label">zile</span>
+            </div>
+
+            <span class="countdown__separator">:</span>
+            
+            <!-- ore -->
+            <div class="countdown__group">
+                <span class="countdown__digit" id="hours_first_digit"></span>
+                <span class="countdown__digit" id="hours_second_digit"></span>
+                <span class="countdown__label">ore</span>
+            </div>
+
+            <span class="countdown__separator">:</span>
+            
+            <!-- minute -->
+            <div class="countdown__group">
+                <span class="countdown__digit" id="minutes_first_digit"></span>
+                <span class="countdown__digit" id="minutes_second_digit"></span>
+                <span class="countdown__label">minute</span>
+            </div>
+
+            <span class="countdown__separator">:</span>
+            
+            <!-- secund -->
+            <div class="countdown__group">
+                <span class="countdown__digit" id="seconds_first_digit"></span>
+                <span class="countdown__digit" id="seconds_second_digit"></span>
+                <span class="countdown__label">secunde</span>
+            </div>
+        </div>
 
         
         <h3>Lista completă a zilelor libere din 2016</h3>
@@ -101,7 +147,7 @@
             <br/>
             Sursa imaginii de fundal: <a id="bg_source" href="#" title="Pexels">Pexels</a>
             <br/>
-            v0.0.1
+            v0.1.0
         </footer>
     </div>
 

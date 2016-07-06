@@ -54,6 +54,67 @@ h3 {
 }
 
 
+.countdown {
+	text-align: center;
+}
+
+.countdown__group {
+	display: inline-block;
+}
+
+.countdown__digit {
+	display: inline-block;
+	width: 1em;
+	font-family: 'Open Sans Condensed',sans-serif;
+	font-size: 40px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: -1px;
+    border-radius: 0.2em;
+    background-color: #444;
+	box-shadow: 1px 1px 1px rgba(4, 4, 4, 0.35);
+    background-image: linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+    background-image: -o-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+    background-image: -moz-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+    background-image: -webkit-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+    background-image: -ms-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+    background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, #3A3A3A),
+		color-stop(0.5, #444444)
+	);	
+}
+
+.countdown__label {
+	display: block;
+	font-family: 'Open Sans Condensed',sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-align: center;
+}
+
+.countdown__separator {
+	font-family: 'Open Sans Condensed',sans-serif;
+	font-size: 40px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: -1px;
+    vertical-align: top;
+}
+
+@media (max-width: 460px) {
+  	.countdown__digit {
+  		font-size: 20px;
+  	}
+
+  	.countdown__separator {
+  		font-size: 20px;
+  	}
+}
+
+
 .days-list {
 	margin: 0 auto;
 	border: 0;
