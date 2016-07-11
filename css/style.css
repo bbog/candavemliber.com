@@ -186,6 +186,7 @@ footer {
 
 footer a {
 	color: #fff;
+	cursor: pointer;
 }
 
 footer a:hover {
