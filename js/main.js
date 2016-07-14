@@ -43,8 +43,8 @@ var DateUtil = {
         var date = moment(timestamp, 'X');
 
         var index = 0,
-            totalHollidays = hollidays.length;
-        for ( ; index < totalHollidays; index++) {
+            total_hollidays = hollidays.length;
+        for ( ; index < total_hollidays; index++) {
 
             var holliday = hollidays[index],
                 holliday_date = moment(holliday.date, "DD/MM/YYYY"),
@@ -74,11 +74,38 @@ var DateUtil = {
 
     getDayNameFromDate: function (date) {
 
-        var dayIndex = moment(date, "DD/MM/YYYY").day(),
-            day = Data.localization.days[dayIndex];
+        var day_index = moment(date, "DD/MM/YYYY").day(),
+            day = Data.localization.days[day_index];
 
         return day;
     },
+
+
+    isWeekend: function (moment_date) {
+
+        var day_index   = moment_date.day(),
+            is_saturday = (day_index === 6),
+            is_sunday   = (day_index === 0); 
+
+        if (is_saturday || is_sunday) {
+            return true;
+        } else {
+            return false;
+        }
+    },
+
+
+    getDaysUntilWeekend: function (moment_date) {
+
+        var day_index = moment_date.day();
+        if (day_index === 0 || day_index === 6) {
+            return 0;
+        } else {
+            // -1 to exclude the current day
+            var days_left = 6 - day_index - 1;
+            return days_left;
+        }
+    }
 };
 
 
@@ -236,9 +263,16 @@ var Data = {
         ]
     },
 
-
     localization: {
         days: ['duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sâmbătă']
+    },
+
+    messages: {
+        working_day: 'Nu azi, astăzi se lucrează :( ',
+        days_until_weekend: 'Mai sunt ##days zile până la weekend',
+        day_until_weekend: 'Mai este o zi până la weekend',
+        weekend_tomorrow: 'Dar nu dispera, mâine e weekend : D',
+        weekend_day: 'Nu e sărbătoare dar azi nu se lucrează, e weekend! Woohoo'
     }
 };
 
@@ -247,6 +281,8 @@ var View = (function () {
 
     var bg_source = Util.get('bg_source'),
         bg_body   = document.body;
+
+    var holliday_status = Util.get('holliday_status');
 
     var holliday_date = Util.get('holliday_date'),
         holliday_name = Util.get('holliday_name'),
@@ -266,6 +302,7 @@ var View = (function () {
     return {
         bg_source: bg_source,
         bg_body: bg_body,
+        holliday_status: holliday_status,
         holliday_date: holliday_date,
         holliday_name: holliday_name,
         holliday_day: holliday_day,
@@ -296,6 +333,41 @@ var ViewUtil = {
 
         View.bg_body.style.backgroundImage = 'url(\'img/working/' + bg_image.path + '\')';
         View.bg_source.href = bg_image.source;
+    },
+
+
+    setHollidayStatus: function () {
+
+        var current_date = moment(DateUtil.getCurrentTimestamp(), 'X'),
+            is_weekend = DateUtil.isWeekend(current_date);
+
+        if (is_weekend) {
+            var message = Data.messages.weekend_day;
+        } else {
+            var message = Data.messages.working_day,
+                days_until_weekend = DateUtil.getDaysUntilWeekend(current_date);
+
+            var weekend_status = '';
+            switch (days_until_weekend) {
+                case 0:
+                    weekend_status = Data.messages.weekend_tomorrow;
+                    break;
+
+                case 1:
+                    weekend_status = Data.messages.day_until_weekend;
+                    break;
+
+                default:
+                    weekend_status = Data.messages.days_until_weekend.replace('##days', days_until_weekend);
+                    break;
+
+
+            }
+
+            message += weekend_status;
+        }
+
+        View.holliday_status.innerHTML = message;
     },
 
 
@@ -350,15 +422,14 @@ var ViewUtil = {
             
 
         }, 1000);
-        
     }
 }
 
 
 ViewUtil.setBackground();
+ViewUtil.setHollidayStatus();
 ViewUtil.setNearestHolliday();
 ViewUtil.initCountdown();
-
 
 
 
