@@ -328,10 +328,22 @@ var ViewUtil = {
      */
     setBackground: function () {
 
-        var random_index = Util.getRandomInt(0, Data.photos.working.length),
-            bg_image = Data.photos.working[random_index];
+        var current_date = moment(DateUtil.getCurrentTimestamp(), 'X'),
+            is_weekend = DateUtil.isWeekend(current_date);
 
-        View.bg_body.style.backgroundImage = 'url(\'img/working/' + bg_image.path + '\')';
+        if (is_weekend) {
+            var photos = Data.photos.holliday,
+                photos_folder = 'holliday';
+        } else {
+            var photos = Data.photos.working,
+                photos_folder = 'working';
+        }
+
+
+        var random_index = Util.getRandomInt(0, photos.length),
+            bg_image = photos[random_index];
+
+        View.bg_body.style.backgroundImage = 'url(\'img/' + photos_folder + '/' + bg_image.path + '\')';
         View.bg_source.href = bg_image.source;
     },
 
