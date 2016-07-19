@@ -299,6 +299,8 @@ var View = (function () {
         seconds_first_digit  = Util.get('seconds_first_digit'),
         seconds_second_digit = Util.get('seconds_second_digit');
 
+    var hollidays_list_table = Util.get('days-list');
+
     return {
         bg_source: bg_source,
         bg_body: bg_body,
@@ -315,7 +317,8 @@ var View = (function () {
         minutes_first_digit: minutes_first_digit,
         minutes_second_digit: minutes_second_digit,
         seconds_first_digit: seconds_first_digit,
-        seconds_second_digit: seconds_second_digit
+        seconds_second_digit: seconds_second_digit,
+        hollidays_list_table: hollidays_list_table
     }
 })();
 
@@ -434,6 +437,39 @@ var ViewUtil = {
             
 
         }, 1000);
+    },
+
+
+    updateHollidaysList: function () {
+
+        var nearest_holliday = DateUtil.getNearestHolliday(),
+            hollidays_list_table = View.hollidays_list_table,
+            tbody = hollidays_list_table.getElementsByTagName('tbody')[0],
+            holliday_rows = tbody.getElementsByTagName('tr');
+
+        var index = 0,
+            total_hollidays = holliday_rows.length,
+            nearest_holliday_reached = false;
+        for ( ; index < total_hollidays; index++) {
+
+            var holliday_row = holliday_rows[index],
+                holliday_cells = holliday_row.getElementsByTagName('td'),
+                holliday_name_cell = holliday_cells[1];
+
+            if (nearest_holliday_reached) {
+                var row_class = 'days-list__holliday--future';
+            } else if (nearest_holliday.name === holliday_name_cell.innerHTML) {
+                var row_class = 'days-list__holliday--current';
+                nearest_holliday_reached = true;
+            } else {
+                var row_class = 'days-list__holliday--past';
+            }
+
+
+            holliday_row.setAttribute('class', row_class);
+        }
+
+
     }
 }
 
@@ -442,6 +478,7 @@ ViewUtil.setBackground();
 ViewUtil.setHollidayStatus();
 ViewUtil.setNearestHolliday();
 ViewUtil.initCountdown();
+ViewUtil.updateHollidaysList();
 
 
 
