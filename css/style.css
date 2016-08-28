@@ -177,8 +177,12 @@ tr.days-list__holliday--current {
 }
 
 
+.social-wrapper {
+	margin-top: 2em;
+}
+
 footer {
-	margin: 2em 0em 1em 0em;
+	margin: 0.5em;
 	font-family: 'Droid Sans', sans-serif;
 	font-size: 0.8em;
 	color: #fff;
