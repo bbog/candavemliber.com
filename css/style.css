@@ -197,3 +197,10 @@ footer a:hover {
 	text-decoration: none;
 }
 
+/** For printing **/
+@media print {
+	.social-wrapper {
+		display: none;
+	}
+}
+
