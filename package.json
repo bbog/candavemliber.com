@@ -1,0 +1,26 @@
+{
+  "name": "candeliber.com",
+  "version": "1.0.0",
+  "description": "Sursa site-ului [Când e liber?](http://candeliber.com)",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbog/candeliber.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bbog/candeliber.com/issues"
+  },
+  "homepage": "https://github.com/bbog/candeliber.com#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
+  }
+}
