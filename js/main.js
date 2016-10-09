@@ -1,7 +1,5 @@
-
-
-
-
+//! version : 0.1.0
+//! license : MIT, authors : Bogdan BUCUR, candeliber.com
 var Util = {
 
     get: function (id) {
