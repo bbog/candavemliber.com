@@ -16,7 +16,7 @@ gulp.task('build-css', function() {
 });
 
 
-var js_files = ['js/moment.min.js', 'js/main.js'];
+var js_files = ['js/moment.min.js', 'js/data.js', 'js/main.js'];
 gulp.task('build-js', function() {
 	return gulp.src(js_files)
 		.pipe(concat('main.min.js'))
