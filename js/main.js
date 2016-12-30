@@ -277,6 +277,14 @@ var ViewUtil = {
             tbody = hollidays_list_table.getElementsByTagName('tbody')[0],
             holliday_rows = tbody.getElementsByTagName('tr');
 
+        var nearest_holliday_index;
+        Data.hollidays.forEach(function (holliday, index) {
+            if (holliday === nearest_holliday) {
+                nearest_holliday_index = index;
+            }
+        });
+
+
         var index = 0,
             total_hollidays = holliday_rows.length,
             nearest_holliday_reached = false;
@@ -288,7 +296,7 @@ var ViewUtil = {
 
             if (nearest_holliday_reached) {
                 var row_class = 'days-list__holliday--future';
-            } else if (nearest_holliday.name === holliday_name_cell.innerHTML) {
+            } else if (index === nearest_holliday_index) {
                 var row_class = 'days-list__holliday--current';
                 nearest_holliday_reached = true;
             } else {
@@ -298,8 +306,6 @@ var ViewUtil = {
 
             holliday_row.setAttribute('class', row_class);
         }
-
-
     }
 }
 
