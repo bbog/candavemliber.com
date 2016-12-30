@@ -1,6 +1,6 @@
 
 
-var CACHE_NAME = 'candeliber-cache-v010';
+var CACHE_NAME = 'candeliber-cache-v011';
 var urlsToCache = [
  '/',
  'index.html',
