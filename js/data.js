@@ -3,59 +3,6 @@ var Data = {
     hollidays: [
         {
             name: 'Anul Nou',
-            date: '01/01/2016'
-        },
-        {
-            name: 'Anul Nou',
-            date: '02/01/2016'
-        },
-        {
-            name: 'Ziua Unirii Principatelor Române',
-            date: '24/01/2016'
-        },
-        {
-            name: 'Paştele',
-            date: '01/05/2016'
-        },
-        {
-            name: 'Ziua Muncii',
-            date: '01/05/2016'
-        },
-        {
-            name: 'Paştele',
-            date: '02/05/2016'
-        },
-        {
-            name: 'Rusalii',
-            date: '19/06/2016'
-        },
-        {
-            name: 'Rusalii',
-            date: '20/06/2016'
-        },
-        {
-            name: 'Adormirea Maicii Domnului',
-            date: '15/08/2016'
-        },
-        {
-            name: 'Sfântul Andrei',
-            date: '30/11/2016'
-        },
-        {
-            name: 'Ziua Naţională a României',
-            date: '01/12/2016'
-        },
-        {
-            name: 'Crăciunul',
-            date: '25/12/2016'
-        },
-        {
-            name: 'Crăciunul',
-            date: '26/12/2016'
-        },
-
-        {
-            name: 'Anul Nou',
             date: '01/01/2017'
         },
         {
