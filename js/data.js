@@ -14,6 +14,10 @@ var Data = {
             date: '24/01/2018'
         },
         {
+            name: 'Vinerea Mare',
+            date: '06/04/2018'
+        },
+        {
             name: 'Paştele',
             date: '08/04/2018'
         },
