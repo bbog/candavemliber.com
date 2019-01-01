@@ -3,63 +3,63 @@ var Data = {
     hollidays: [
         {
             name: 'Anul Nou',
-            date: '01/01/2018'
+            date: '01/01/2019'
         },
         {
             name: 'Anul Nou',
-            date: '02/01/2018'
+            date: '02/01/2019'
         },
         {
             name: 'Ziua Unirii Principatelor Române',
-            date: '24/01/2018'
+            date: '24/01/2019'
         },
         {
             name: 'Vinerea Mare',
-            date: '06/04/2018'
+            date: '26/04/2019'
         },
         {
             name: 'Paştele',
-            date: '08/04/2018'
+            date: '28/04/2019'
         },
         {
             name: 'Paştele',
-            date: '09/04/2018'
+            date: '29/04/2019'
         },
         {
             name: 'Ziua Muncii',
-            date: '01/05/2018'
-        },
-        {
-            name: 'Rusalii',
-            date: '27/05/2018'
-        },
-        {
-            name: 'Rusalii',
-            date: '28/05/2018'
+            date: '01/05/2019'
         },
         {
             name: 'Ziua Copilului',
-            date: '01/06/2018'
+            date: '01/06/2019'
+        },
+        {
+            name: 'Rusalii',
+            date: '16/06/2019'
+        },
+        {
+            name: 'Rusalii',
+            date: '17/06/2019'
         },
         {
             name: 'Adormirea Maicii Domnului',
-            date: '15/08/2018'
+            date: '15/08/2019'
         },
         {
             name: 'Sfântul Andrei',
-            date: '30/11/2018'
+            date: '30/11/2019'
         },
         {
             name: 'Ziua Naţională a României',
-            date: '01/12/2018'
+            date: '01/12/2019'
         },
         {
             name: 'Crăciunul',
-            date: '25/12/2018'
+            date: '25/12/2019'
         },
         {
             name: 'Crăciunul',
-            date: '26/12/2018'
+            date: '26/12/2019'
         }
     ],
 
