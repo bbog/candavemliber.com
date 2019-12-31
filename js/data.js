@@ -60,7 +60,75 @@ var Data = {
         {
             name: 'Crăciunul',
             date: '26/12/2019'
-        }
+        },
+        {
+            name: 'Anul Nou',
+            date: '01/01/2020'
+        },
+        {
+            name: 'Anul Nou',
+            date: '02/01/2020'
+        },
+        {
+            name: 'Ziua Unirii Principatelor Române',
+            date: '24/01/2020'
+        },
+        {
+            name: 'Vinerea Mare',
+            date: '17/04/2020'
+        },
+        {
+            name: 'Paştele',
+            date: '19/04/2020'
+        },
+        {
+            name: 'Paştele',
+            date: '20/04/2020'
+        },
+        {
+            name: 'Ziua Muncii',
+            date: '01/05/2020'
+        },
+        {
+            name: 'Ziua Copilului',
+            date: '01/06/2020'
+        },
+        {
+            name: 'Rusalii',
+            date: '07/06/2020'
+        },
+        {
+            name: 'Rusalii',
+            date: '08/06/2020'
+        },
+        {
+            name: 'Adormirea Maicii Domnului',
+            date: '15/08/2020'
+        },
+        {
+            name: 'Sfântul Andrei',
+            date: '30/11/2020'
+        },
+        {
+            name: 'Ziua Naţională a României',
+            date: '01/12/2020'
+        },
+        {
+            name: 'Crăciunul',
+            date: '25/12/2020'
+        },
+        {
+            name: 'Crăciunul',
+            date: '26/12/2020'
+        },
+        {
+            name: 'Anul Nou',
+            date: '01/01/2021'
+        },
+        {
+            name: 'Anul Nou',
+            date: '02/01/2021'
+        },
     ],
 
     photos: {
