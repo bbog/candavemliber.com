@@ -3,79 +3,79 @@ var Data = {
     hollidays: [
         {
             name: 'Anul Nou',
-            date: '01/01/2024'
-        },
-        {
-            name: 'Anul Nou',
-            date: '02/01/2024'
-        },
-        {
-            name: 'Bobotează',
-            date: '06/01/2024'
-        },
-        {
-            name: 'Sfântul Ioan Botezătorul',
-            date: '07/01/2024'
-        },
-        {
-            name: 'Ziua Unirii Principatelor Române',
-            date: '24/01/2024'
-        },
-        {
-            name: 'Ziua Muncii',
-            date: '01/05/2024'
-        },
-        {
-            name: 'Vinerea Mare',
-            date: '03/05/2024'
-        },
-        {
-            name: 'Paştele',
-            date: '05/05/2024'
-        },
-        {
-            name: 'Paştele',
-            date: '06/05/2024'
-        },
-        {
-            name: 'Ziua Copilului',
-            date: '01/06/2024'
-        },
-        {
-            name: 'Rusalii',
-            date: '23/06/2024'
-        },
-        {
-            name: 'Rusalii',
-            date: '24/06/2024'
-        },
-        {
-            name: 'Adormirea Maicii Domnului',
-            date: '15/08/2024'
-        },
-        {
-            name: 'Sfântul Andrei',
-            date: '30/11/2024'
-        },
-        {
-            name: 'Ziua Naţională a României',
-            date: '01/12/2024'
-        },
-        {
-            name: 'Crăciunul',
-            date: '25/12/2024'
-        },
-        {
-            name: 'Crăciunul',
-            date: '26/12/2024'
-        },
-        {
-            name: 'Anul Nou',
             date: '01/01/2025'
         },
         {
             name: 'Anul Nou',
             date: '02/01/2025'
+        },
+        {
+            name: 'Bobotează',
+            date: '06/01/2025'
+        },
+        {
+            name: 'Sfântul Ioan Botezătorul',
+            date: '07/01/2025'
+        },
+        {
+            name: 'Ziua Unirii Principatelor Române',
+            date: '24/01/2025'
+        },
+        {
+            name: 'Vinerea Mare',
+            date: '18/04/2025'
+        },
+        {
+            name: 'Paştele',
+            date: '20/04/2025'
+        },
+        {
+            name: 'Paştele',
+            date: '21/04/2025'
+        },
+        {
+            name: 'Ziua Muncii',
+            date: '01/05/2025'
+        },
+        {
+            name: 'Ziua Copilului',
+            date: '01/06/2025'
+        },
+        {
+            name: 'Rusalii',
+            date: '08/06/2025'
+        },
+        {
+            name: 'Rusalii',
+            date: '09/06/2025'
+        },
+        {
+            name: 'Adormirea Maicii Domnului',
+            date: '15/08/2025'
+        },
+        {
+            name: 'Sfântul Andrei',
+            date: '30/11/2025'
+        },
+        {
+            name: 'Ziua Naţională a României',
+            date: '01/12/2025'
+        },
+        {
+            name: 'Crăciunul',
+            date: '25/12/2025'
+        },
+        {
+            name: 'Crăciunul',
+            date: '26/12/2025'
+        },
+        {
+            name: 'Anul Nou',
+            date: '01/01/2026'
+        },
+        {
+            name: 'Anul Nou',
+            date: '02/01/2026'
         },
     ],
 
